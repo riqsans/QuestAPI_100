@@ -7,8 +7,6 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.questapi_100.repositori.AplikasiDataSiswa
 import com.example.questapi_100.viewmodel.EntryViewModel
 import com.example.questapi_100.viewmodel.HomeViewModel
-import kotlinx.coroutines.channels.Channel
-import okhttp3.Call
 
 fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa = (
         this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiDataSiswa)
