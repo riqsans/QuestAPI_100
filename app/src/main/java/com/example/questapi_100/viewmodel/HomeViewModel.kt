@@ -8,8 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.questapi_100.modeldata.DataSiswa
 import com.example.questapi_100.repositori.RepositoryDataSiswa
 import kotlinx.coroutines.launch
+import okio.IOException
 import retrofit2.HttpException
-import java.io.IOException
 
 sealed interface StatusUiSiswa {
     data class Success(val siswa: List<DataSiswa> = listOf()) : StatusUiSiswa
