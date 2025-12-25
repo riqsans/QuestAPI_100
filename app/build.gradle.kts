@@ -66,4 +66,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
+    implementation("androidx.compose.material:material-icons-extended:1.5.0")
 }
