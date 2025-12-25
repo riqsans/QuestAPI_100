@@ -35,4 +35,15 @@ fun DetailSiswaScreen(
                 )
             }
         },
-    ) 
+    ) { innerPadding ->
+        BodyDetailSiswa(
+            detailSiswaUiState = uiState.value,
+            onDelete = {
+                viewModel.deleteItem()
+                navigateBack()
+            },
+            modifier = Modifier.padding(innerPadding)
+        )
+    }
+}
+
