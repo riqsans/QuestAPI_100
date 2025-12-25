@@ -32,3 +32,5 @@ RepositoryDataSiswa
     init {
         getSatuSiswa()
     }
+
+    
