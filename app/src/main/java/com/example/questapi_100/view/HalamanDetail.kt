@@ -87,3 +87,40 @@ fun BodyDetailSiswa(
     }
 }
 
+@Composable
+fun ItemDetailSiswa(
+    siswa: Siswa, modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(id = R.dimen.padding_medium)),
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+        ) {
+            ComponentDetailSiswa(
+                judul = R.string.id,
+                isinya = siswa.id.toString(),
+            )
+            ComponentDetailSiswa(
+                judul = R.string.nama,
+                isinya = siswa.nama,
+            )
+            ComponentDetailSiswa(
+                judul = R.string.alamat,
+                isinya = siswa.alamat,
+            )
+            ComponentDetailSiswa(
+                judul = R.string.telpon,
+                isinya = siswa.telpon,
+            )
+        }
+    }
+}
+
