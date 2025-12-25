@@ -9,18 +9,18 @@ import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface ServiceApiSiswa {
-    @GET("bacaTeman.php")
+    @GET("bacateman.php")
     suspend fun getSiswa():List<DataSiswa>
 
     @POST("insertTM.php")
     suspend fun postSiswa(@Body dataSiswa: DataSiswa):retrofit2.Response<Void>
 
-    @GET("bacaTeman1.php/{id}")
+    @GET("baca1teman.php")
     suspend fun getSatuSiswa(@Query("id") id:Int):DataSiswa
 
-    @PUT("editTM.php/{id}")
+    @PUT("editTM.php")
     suspend fun editSatuSiswa(@Query("id") id:Int, @Body dataSiswa: DataSiswa):retrofit2.Response<Void>
 
-    @DELETE("deleteTM.php/{id}")
+    @DELETE("deleteTM.php")
     suspend fun hapusSatuSiswa(@Query("id")id:Int):retrofit2.Response<Void>
 }
