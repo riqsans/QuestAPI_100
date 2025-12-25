@@ -9,4 +9,8 @@ fun DetailSiswaScreen(
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DetailSiswaViewModel = viewModel(factory = PenyediaViewModel.Factory)
-)
+) {
+    val uiState = viewModel.uiStateDetail.collectAsState()
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+
+    
