@@ -124,3 +124,23 @@ fun ItemDetailSiswa(
     }
 }
 
+@Composable
+fun ComponentDetailSiswa(
+    @StringRes judul: Int,
+    isinya: String,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+    ) {
+        Text(
+            text = stringResource(id = judul),
+            style = MaterialTheme.typography.labelMedium
+        )
+        Text(
+            text = isinya,
+            style = MaterialTheme.typography.bodyLarge,
+        )
+    }
+}
+
