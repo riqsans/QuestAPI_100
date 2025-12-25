@@ -12,6 +12,7 @@ import com.example.questapi_100.modeldata.toDataSiswa
 import com.example.questapi_100.modeldata.toUiStateSiswa
 import com.example.questapi_100.repositori.RepositoryDataSiswa
 import com.example.questapi_100.uicontroller.route.DestinasiDetail
+import com.example.questapi_100.uicontroller.route.DestinasiEdit
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -21,7 +22,7 @@ RepositoryDataSiswa
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
         private set
 
-    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetail.itemIdArg])
+    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiEdit.itemIdArg])
     init {
         viewModelScope.launch {
             uiStateSiswa = repositoryDataSiswa.getSatuSiswa(idSiswa)
