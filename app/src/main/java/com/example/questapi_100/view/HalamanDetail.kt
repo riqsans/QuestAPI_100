@@ -23,4 +23,16 @@ fun DetailSiswaScreen(
                 scrollBehavior = scrollBehavior
             )
         },
-        
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = { navigateToEditItem(uiState.value.detailSiswa.id) },
+                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Edit,
+                    contentDescription = stringResource(R.string.edit_siswa),
+                )
+            }
+        },
+    ) 
