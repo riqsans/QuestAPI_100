@@ -47,3 +47,43 @@ fun DetailSiswaScreen(
     }
 }
 
+@Composable
+fun BodyDetailSiswa(
+    detailSiswaUiState: DetailSiswaUiState,
+    onDelete: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+            .padding(dimensionResource(id = R.dimen.padding_medium))
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+    ) {
+        var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }
+
+        ItemDetailSiswa(
+            siswa = detailSiswaUiState.detailSiswa,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        OutlinedButton(
+            onClick = { deleteConfirmationRequired = true },
+            shape = MaterialTheme.shapes.small,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(stringResource(R.string.delete))
+        }
+
+        if (deleteConfirmationRequired) {
+            DeleteConfirmationDialog(
+                onDeleteConfirm = {
+                    deleteConfirmationRequired = false
+                    onDelete()
+                },
+                onDeleteCancel = { deleteConfirmationRequired = false },
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium))
+            )
+        }
+    }
+}
+
