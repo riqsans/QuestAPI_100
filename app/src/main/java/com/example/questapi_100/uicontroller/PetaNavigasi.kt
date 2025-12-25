@@ -15,6 +15,9 @@ import com.example.questapi_100.uicontroller.route.DestinasiEntry
 import com.example.questapi_100.uicontroller.route.DestinasiHome
 import com.example.questapi_100.view.EntrySiswaScreen
 import com.example.questapi_100.view.HomeScreen
+import com.example.questapi_100.uicontroller.route.DestinasiEdit
+import com.example.questapi_100.view.DetailSiswaScreen
+import com.example.questapi_100.view.EditSiswaScreen
 
 
 @Composable
@@ -41,8 +44,7 @@ fun HostNavigasi(
             .itemIdArg) {
             type = NavType.IntType })
         ){
-            DetailSiswaScreen(navigateToEditItem = {navController.navigate("${DestinasiEdit.route}
-                    /$it")},
+            DetailSiswaScreen(navigateToEditItem = {navController.navigate("${DestinasiEdit.route}/$it")},
                     navigateBack = { navController.navigate(DestinasiHome.route) })
             }
                     composable(DestinasiEdit.routeWithArgs, arguments = listOf(navArgument(DestinasiEdit.itemIdArg
