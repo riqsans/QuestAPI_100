@@ -41,8 +41,7 @@ fun EntrySiswaScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-
-    Scaffold(
+    Scaffold (
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             SiswaTopAppBar(
@@ -51,8 +50,8 @@ fun EntrySiswaScreen(
                 navigateUp = navigateBack,
                 scrollBehavior = scrollBehavior
             )
-        }
-    ) { innerPadding ->
+        }) { innerPadding ->
+
         EntrySiswaBody(
             uiStateSiswa = viewModel.uiStateSiswa,
             onSiswaValueChange = viewModel::updateUiState,
@@ -103,14 +102,14 @@ fun FormTambahSiswa(
     modifier: Modifier = Modifier,
     onValueChange: (DetailSiswa) -> Unit = {},
     enabled: Boolean = true
-) {
+){
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
-    ) {
+    ){
         OutlinedTextField(
             value = detailSiswa.nama,
-            onValueChange = { onValueChange(detailSiswa.copy(nama = it)) },
+            onValueChange = {onValueChange(detailSiswa.copy(nama=it)) },
             label = { Text(stringResource(R.string.nama)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -118,7 +117,7 @@ fun FormTambahSiswa(
         )
         OutlinedTextField(
             value = detailSiswa.alamat,
-            onValueChange = { onValueChange(detailSiswa.copy(alamat = it)) },
+            onValueChange = {onValueChange(detailSiswa.copy(alamat=it))},
             label = { Text(stringResource(R.string.alamat)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
@@ -126,7 +125,7 @@ fun FormTambahSiswa(
         )
         OutlinedTextField(
             value = detailSiswa.telpon,
-            onValueChange = { onValueChange(detailSiswa.copy(telpon = it)) },
+            onValueChange = {onValueChange(detailSiswa.copy(telpon = it))},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(text = stringResource(R.string.telpon)) },
             modifier = Modifier.fillMaxWidth(),
@@ -138,7 +137,6 @@ fun FormTambahSiswa(
             Text(
                 text = stringResource(R.string.required_field),
                 modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_medium))
-
             )
         }
         Divider(
